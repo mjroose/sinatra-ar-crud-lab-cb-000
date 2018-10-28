@@ -12,6 +12,10 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
+  get '/posts/:id/edit' do
+    erb :edit
+  end
+
   get '/posts/:id' do
     @post = Post.find(params[:id])
 
@@ -28,6 +32,8 @@ class ApplicationController < Sinatra::Base
 
     redirect to :'/posts'
   end
+
+
 
   delete '/posts/:id/delete' do
     post = Post.find(params[:id])
