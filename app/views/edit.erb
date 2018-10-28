@@ -4,11 +4,11 @@
   <input id="hidden" type="hidden" name="_method" value="patch">
   <p>
     <label for="name">Post Title: </label>
-    <input type="text" name="post[name]" id="name" value="<%= #{@post.name} %>">
+    <input type="text" name="post[name]" id="name">
   </p>
   <p>
     <label for="content">Post Content: </label>
-    <textarea name="post[content]" id="content" value="<%= #{@post.content} %>"></textarea>
+    <textarea name="post[content]" id="content""></textarea>
   </p>
   <input type="submit" id="submit" value="Update">
 </form>
