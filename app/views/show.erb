@@ -5,5 +5,10 @@
   <input type="submit" id="submit" value="Delete">
 </form>
 
+<form method="POST" action=<%= "/posts/#{@post.id}/edit" %>>
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <input type="submit" id="submit" value="Edit">
+</form>
+
 <p><%= @post.content %></p>
 <p><a href="/posts">Return to Index</a></p>
