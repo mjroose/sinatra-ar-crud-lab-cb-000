@@ -6,7 +6,9 @@
 </form>
 <p><a href="/posts/new">New Post</a></p>
 
-<% Post.all.each do |post| %>
-  <h3><%= post.name %></h3>
-  <p><%= post.content %></p>
-<% end %>
+<a href=<%= "/posts/#{post.id}" %>>
+  <% Post.all.each do |post| %>
+    <h3><%= post.name %></h3>
+    <p><%= post.content %></p>
+  <% end %>
+</a>
