@@ -1,7 +1,7 @@
 <h1>New Post</h1>
 
 <form method="POST" action="/posts">
-  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input id="hidden" type="hidden" name="_method" value="patch">
   <p>
     <label for="name">Post Title: </label>
     <input type="text" name="post[name]" id="name" value=<%= "#{@post.name}" %>>
