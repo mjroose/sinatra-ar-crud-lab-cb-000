@@ -7,7 +7,7 @@
 <p><a href="/posts/new">New Post</a></p>
 
 <% Post.all.each do |post| %>
-  <a href="/posts/#{post.id}">
+  <a href=<%= "/posts/#{post.id}" %>>
     <h3><%= post.name %></h3>
     <p><%= post.content %></p>
   </a>
