@@ -1,0 +1,14 @@
+<h1>Here are all the posts</h1>
+
+<form method="POST" action="/posts">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete All">
+</form>
+<p><a href="/posts/new">New Post</a></p>
+
+<% Post.all.each do |post| %>
+  <a href=<%= "/posts/#{post.id}" %>>
+    <h3><%= post.name %></h3>
+    <p><%= post.content %></p>
+  </a>
+<% end %>
