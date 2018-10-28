@@ -16,10 +16,18 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  get '/posts/delete_all' do
+    Post.all.each do |post|
+      post.destroy
+    end
+
+    redirect to :'/posts'
+  end
+
   post '/posts' do
     post = Post.new(params[:post])
     post.save
-    binding.pry
+    
     redirect to :'/posts'
   end
 end
