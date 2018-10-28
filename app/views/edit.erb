@@ -1,0 +1,14 @@
+<h1>New Post</h1>
+
+<form method="POST" action="/posts">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <p>
+    <label for="name">Post Title: </label>
+    <input type="text" name="post[name]" id="name" value=<%= "#{@post.name}" %>>
+  </p>
+  <p>
+    <label for="content">Post Content: </label>
+    <textarea name="post[content]" id="content" value=<%= "#{@post.content}" %>></textarea>
+  </p>
+  <input type="submit" id="submit" value="Update">
+</form>
