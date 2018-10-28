@@ -30,4 +30,12 @@ class ApplicationController < Sinatra::Base
 
     redirect to :'/posts'
   end
+
+  delete '/posts' do
+    Post.all.each do |post|
+      post.destroy
+    end
+
+    redirect to :'/posts'
+  end
 end
