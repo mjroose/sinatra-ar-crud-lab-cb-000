@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
   post '/posts' do
     post = Post.new(params[:post])
     post.save
-    
+    binding.pry
     redirect to :'/posts'
   end
 end
