@@ -26,6 +26,15 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  patch '/posts/:id' do
+    post = Post.find(params[:id])
+    post.name = params[:post][:name]
+    post.content = params[:post][:content]
+    post.save
+
+    redirect to :"/posts/#{post.id}"
+  end
+
   post '/posts' do
     post = Post.new(params[:post])
     post.save
