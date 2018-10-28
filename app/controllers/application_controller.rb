@@ -12,16 +12,14 @@ class ApplicationController < Sinatra::Base
     erb :new
   end
 
-  get '/posts' do
-    erb :index
+  get '/posts/:id' do
+    @post = Post.find(params[:id])
+
+    erb :show
   end
 
-  get '/posts/delete_all' do
-    Post.all.each do |post|
-      post.destroy
-    end
-
-    redirect to :'/posts'
+  get '/posts' do
+    erb :index
   end
 
   post '/posts' do
